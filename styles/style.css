@@ -1,0 +1,117 @@
+html {
+	height: 100%;
+	background-image: url("../images/rainbow.jpg");
+}
+
+body {
+	color: white;
+	font-family: 'Baloo Paaji', cursive;
+	margin: 0;
+	padding: 0;
+}
+
+.overlay, .overlay2 {
+	background: rgba(0, 0, 0, .5);
+	margin: 0;
+	padding: 0;
+}
+
+.overlay2 {
+	height: 100%;
+}
+
+div {
+	margin: 1%;
+}
+
+h1 {
+	font-size: 50pt;
+	margin-left: 2.5%;
+}
+
+h2 {
+	font-size: 30pt;
+	margin-left: 2.5%;
+}
+
+h3 {
+	font-size: 25pt;
+}
+
+h5 {
+	font-size: 14pt;
+	margin-left: 2.5%;
+}
+
+hr {
+	margin-top: 2%;
+	border: 2px solid white;
+}
+
+img {
+	margin-top: 5%;
+	width: 40%;
+}
+
+.album,
+.music {
+	text-align: center;
+}
+
+h4 {
+	font-size: 20pt;
+}
+
+button {
+	background-color: white;
+	color: black;
+	display: inline-block;
+  	margin: 2.5%;
+  	padding: .5%;
+  	font-size: 20pt;
+  	line-height: 2;
+  	appearance: none;
+  	box-shadow: none;
+  	border: 1px solid white;
+  	border-radius: 20px;
+  	cursor: pointer;
+  	font-family: 'Baloo Paaji', cursive;
+}
+
+button:hover {
+	background-color: black;
+	color: white;
+  	border: 1px solid black;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+	font-size: 20pt;
+	text-align: center;
+}
+a:hover {
+	color: black;
+}
+
+.form {
+	margin: 0;
+	text-align: center;
+}
+
+form {
+	text-align: center;
+}
+
+label, input, select, option {
+	font-family: 'Baloo Paaji', cursive;
+	font-size: 18pt;
+}
+
+.buttons {
+	text-align: center;
+}
+
+.you-sure {
+	text-align: center;
+}
