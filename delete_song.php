@@ -21,7 +21,7 @@
                             $song_name = $row['song_name'];
             ?>
             <h2 class = "you-sure">Are you sure you want to delete '<?php echo $song_name; ?>'?</h2>
-            <?
+            <?php
                         }
                     }
                 }

@@ -40,11 +40,12 @@
     </head>
     <body>
         <div class = "overlay2">
-            <?
+            <?php
                 if($check) {
             ?>
             <h2 class = "form">'<?php echo $song_name; ?>' already exists in the music library.</h2>
-            <? }
+            <?php
+                }
                 else {
                     move_uploaded_file($_FILES['music']['tmp_name'], $uploadfile);
 
@@ -56,7 +57,7 @@
                     if($conn->query($sql) === TRUE) {}
             ?>
             <h2 class = "form">You have added '<?php echo $song_name; ?>' to the music library.</h2>
-            <?        
+            <?php        
                     $conn->close();
                 }
             ?>

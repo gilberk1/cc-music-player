@@ -51,7 +51,7 @@
                 <a href = "<?php echo $add_artist; ?>"><button>Add Album</button></a>
                 <a href = "<?php echo $edit_artist; ?>"><button>Edit Artist</button></a>
                 <a href = "<?php echo $delete_artist; ?>"><button>Delete Artist</button></a></h2><hr>
-                <?    
+                <?php    
                     foreach($resultAlbums as $album) {
                         if($artist['id'] == $album['artist_id']) {
                         $add_album = 'add_song.php?album_id='.$album['id'].'';
@@ -67,7 +67,7 @@
                         <a href = "<?php echo $delete_album; ?>"><button>Delete Album</button></a>
                     </div>
                 </div>
-                <?
+                <?php
                             foreach($resultSongs as $song) {
                                 if($album['id'] == $song['album_id']) {
                                 $edit_song = 'edit_song.php?song_id='.$song['id'].'';
@@ -81,7 +81,7 @@
                     <a href = "<?php echo $edit_song; ?>"><button>Edit Song</button></a>
                     <a href = "<?php echo $delete_song; ?>"><button>Delete Song</button></a>
                 </div>
-                <?
+                <?php
                                 }
                             }
                         }

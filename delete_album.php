@@ -21,7 +21,7 @@
                             $album_name = $row['album_name'];
             ?>
             <h2 class = "you-sure">Are you sure you want to delete '<?php echo $album_name; ?>'<br/>and the attached songs?</h2>
-            <?
+            <?php
                         }
                     }
                 }

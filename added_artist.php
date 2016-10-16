@@ -29,11 +29,12 @@
     </head>
     <body>
         <div class = "overlay2">
-            <?
+            <?php
                 if($check) {
             ?>
             <h2 class = "form">'<?php echo $artist_name; ?>' already exists in the music library.</h2>
-            <?  }
+            <?php
+                }
                 else {
                     $artist_name = str_replace("'", "''", $artist_name);
 
@@ -43,7 +44,7 @@
                     if($conn->query($sql) === TRUE) {}
             ?>
             <h2 class = "form">You have added '<?php echo $artist_name; ?>' to the music library.</h2>
-            <?
+            <?php
                 } 
                 
                 $conn->close();

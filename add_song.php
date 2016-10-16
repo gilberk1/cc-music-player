@@ -26,7 +26,7 @@
                                         $album_name = $row['album_name'];
                             ?>
                                 <option value = "<?php echo $album_id; ?>" selected><?php echo $album_name; ?></option>
-                            <?
+                            <?php
                                     }
                                 }
                             }

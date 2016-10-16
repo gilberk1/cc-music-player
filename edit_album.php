@@ -44,12 +44,12 @@
                                     if($row['id'] == $artist_id) {
                             ?>
                                 <option value = "<?php echo $artist_id; ?>" selected><?php echo $artist_name; ?></option>
-                            <?
+                            <?php
                                     }
                                     else {
                             ?>
                                 <option value = "<?php echo $other_artist_id; ?>"><?php echo $artist_name; ?></option>
-                            <?
+                            <?php
                                     }
                                 }
                             }

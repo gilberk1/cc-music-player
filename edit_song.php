@@ -43,12 +43,12 @@
                                     if($row['id'] == $album_id) {
                             ?>
                                 <option value = "<?php echo $album_id; ?>" selected><?php echo $album_name; ?></option>
-                            <?
+                            <?php
                                     }
                                     else {
                             ?>
                                 <option value = "<?php echo $other_album_id; ?>"><?php echo $album_name; ?></option>
-                            <?
+                            <?php
                                     }
                                 }
                             }

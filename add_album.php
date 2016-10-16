@@ -28,7 +28,7 @@
                                         $artist_name = $row['artist_name'];
                             ?>
                                 <option value = "<?php echo $artist_id; ?>" selected><?php echo $artist_name; ?></option>
-                            <?
+                            <?php
                                     }
                                 }
                             }
