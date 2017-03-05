@@ -1,8 +1,13 @@
+<!-- Add Album Page -->
+
 <?php
     include 'db_connection.php'; 
 
+    /* GET the artist id to show the Chosen Artist */
+
     $artist_id = $_GET['artist_id'];
 ?>
+
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="styles/style.css">
@@ -13,11 +18,25 @@
     <body>
         <div class = "overlay2">
             <h1 class = "form">Add Album</h1>
+
+            <!-- Add Album Form -->
+
             <form id = "album_form" action="added_album.php" method="post" enctype = "multipart/form-data">
+
+                <!-- Show Chosen Artist -->
+
                 <div>
                     <label for="choose_artist">Chosen Artist: </label>
                     <select id="choose_artist" name = "choose_artist" hidden required>
                         <?php
+                            /* Grab everything from the artists table.
+                                While going through all results,
+                                place the artist that matches the
+                                artist id into the artist_name
+                                variable. Place it into the hidden
+                                select and echo the artist_name to the
+                                screen. */
+
                             $sql = "SELECT * FROM artists";
 
                             $result = $conn->query($sql);
@@ -38,10 +57,16 @@
                     </select>
                     <h3><?php echo $artist_name; ?></h3>
                 </div>
+
+                <!-- Enter Album Name -->
+
                 <div>
                     <label for="album_name">Album Name: </label>
                     <input type="text" id="album_name" name="album_name" required/>
                 </div>
+
+                <!-- Upload Album Artwork -->
+
                 <div>
                     <label for="artwork">Upload Album Artwork (keep under 1MB): </label>
                     <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />

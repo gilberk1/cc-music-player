@@ -1,5 +1,9 @@
+<!-- Delete Album Page -->
+
 <?php
     include 'db_connection.php'; 
+
+    /* GET the artist id to Delete Artist */
 
     $artist_id = $_GET['artist_id'];
 ?>
@@ -11,6 +15,11 @@
     <body>
         <div class = "overlay2">
             <?php
+                /* Grab everything from the artists table.
+                    While going through all results,
+                    place the artist that matches the
+                    artist id into the artist_name variable.
+                    Echo the artist_name to the screen. */
                 $sql = "SELECT * FROM artists";
 
                 $result = $conn->query($sql);
@@ -20,6 +29,9 @@
                         if($row['id'] == $artist_id) {
                             $artist_name = $row['artist_name'];
             ?>
+
+            <!-- Delete Confirmation -->
+
             <h2 class = "you-sure">Are you sure you want to delete '<?php echo $artist_name; ?>'<br/>and the attached albums and songs?</h2>
             <?php
                         }

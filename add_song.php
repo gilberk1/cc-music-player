@@ -1,5 +1,9 @@
+<!-- Add Song Page -->
+
 <?php
     include 'db_connection.php'; 
+
+    /* GET the album id to show the Chosen Album */
 
     $album_id = $_GET['album_id'];
 ?>
@@ -11,11 +15,25 @@
     <body>
         <div class = "overlay2">
             <h1 class = "form">Add Song</h1>
+
+            <!-- Add Song Form -->
+
             <form action="added_song.php" method="post" enctype = "multipart/form-data">
+
+                <!-- Show Chosen Album -->
+
                 <div>
                     <label for="choose_album">Chosen Album: </label>
                     <select id="choose_album" name = "choose_album" hidden required>
                         <?php
+                            /* Grab everything from the albums table.
+                                While going through all results,
+                                place the album that matches the
+                                album id into the album_name
+                                variable. Place it into the hidden
+                                select and echo the album_name to the
+                                screen. */
+
                             $sql = "SELECT * FROM albums";
 
                             $result = $conn->query($sql);
@@ -36,14 +54,23 @@
                     </select>
                     <h3><?php echo $album_name; ?></h3>
                 </div>
+
+                <!-- Enter Song Name -->
+
                 <div>
                     <label for="song_name">Song Name: </label>
                     <input type="text" id="song_name" name="song_name" required/>
                 </div>
+
+                <!-- Enter Track Number -->
+
                 <div>
                     <label for="track">Track Number: </label>
                     <input type="number" id="track" name="track" required/>
                 </div>
+
+                <!-- Upload Song File -->
+
                 <div>
                     <label for="music">Upload Song File: </label>
                     <input type="file" id="music" name="music" accept = "audio/*" required/>

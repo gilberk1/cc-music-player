@@ -1,5 +1,9 @@
+<!-- Delete Song Page -->
+
 <?php
     include 'db_connection.php'; 
+
+    /* GET the song id to Delete Song */
 
     $song_id = $_GET['song_id'];
 ?>
@@ -11,6 +15,12 @@
     <body>
         <div class = "overlay2">
             <?php
+                /* Grab everything from the songs table.
+                    While going through all results,
+                    place the song that matches the
+                    song id into the song_name variable.
+                    Echo the song_name to the screen. */
+
                 $sql = "SELECT * FROM songs";
 
                 $result = $conn->query($sql);
@@ -20,6 +30,9 @@
                         if($row['id'] == $song_id) {
                             $song_name = $row['song_name'];
             ?>
+
+            <!-- Delete Confirmation -->
+
             <h2 class = "you-sure">Are you sure you want to delete '<?php echo $song_name; ?>'?</h2>
             <?php
                         }

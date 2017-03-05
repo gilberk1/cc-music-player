@@ -1,7 +1,16 @@
+<!--Edit Artist Page -->
+
 <?php
     include 'db_connection.php'; 
 
+    /* GET the artist id to get the Chosen Artist */
+
     $artist_id = $_GET['artist_id'];
+
+    /* Grab everything from the artists table.
+        While going through all results,
+        place the artist that matches the
+        artist id into the artist_name variable. */
 
     $sql = "SELECT * FROM artists";
 
@@ -24,7 +33,13 @@
     <body>
         <div class = "overlay2">
             <h1 class = "form">Edit Artist</h1>
+
+            <!-- Edit Artist Form -->
+
             <form action='<?php echo $edited_artist; ?>' method="post">
+
+                <!-- Edit Artist Name -->
+
                 <div>
                     <label for="artist_name">Artist Name: </label>
                     <input type="text" id="artist_name" name="artist_name" value = "<?php echo $artist_name; ?>" required/>

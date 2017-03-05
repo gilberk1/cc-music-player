@@ -1,11 +1,20 @@
+<!-- Edited Album Page -->
+
 <?php
     include 'db_connection.php'; 
 
+    /* GET the album id to select the Chosen Album */
+
     $album_id = $_GET['album_id'];
     
+    /* POST the artist id and album name */
+
     $artist_id = $_POST["choose_artist"];
     $album_name = $_POST["album_name"];
     $album_name = str_replace("'", "''", $album_name);
+
+    /* If artwork was not uploaded, UPDATE artist_id and album_name.
+        If artwork was uploaded, UPDATE artist_id, album_name, and artwork. */
 
     if ($_FILES['artwork']['size'] == 'undefined') {
         $sql = "UPDATE albums
@@ -36,6 +45,9 @@
     </head>
     <body>
         <div class = "overlay2">
+
+            <!-- Edit Confirmation -->
+
             <h2 class = "form">You have edited '<?php echo $album_name; ?>' in the music library.</h2>
             <a href="index.php"><h2>Go Back to Library</h2></a>
         </div>

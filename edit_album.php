@@ -1,7 +1,17 @@
+<!--Edit Album Page -->
+
 <?php
     include 'db_connection.php'; 
 
+    /* GET the album id to select the Chosen Album */
+
     $album_id = $_GET['album_id'];
+
+    /* Grab everything from the albums table.
+        While going through all results,
+        place the album that matches the
+        album id into the artist_id, album_name,
+        and artwork variable. */
 
     $sql = "SELECT * FROM albums";
 
@@ -28,11 +38,26 @@
     <body>
         <div class = "overlay">
             <h1 class = "form">Edit Album</h1>
+
+            <!-- Edit Album Form -->
+
             <form id = "album_form" action='<?php echo $edited_album; ?>' method="post" enctype = "multipart/form-data">
+                
+                <!-- Show Chosen Artist in Dropdown -->
+
                 <div>
                     <label for="choose_artist">Choose Artist: </label>
                     <select id="choose_artist" name = "choose_artist" required>
                         <?php
+                            /* Grab everything from the artists table.
+                                While going through all results,
+                                place the artist that matches the
+                                artist id into the artist_name
+                                variable. Place the artist_id into the
+                                one that matches. However, if it does
+                                not match, place it in the other_artist_id. The one that matches will show up as the selected option
+                                in the dropdown. */
+
                             $sql = "SELECT * FROM artists";
 
                             $result = $conn->query($sql);
@@ -58,15 +83,24 @@
                         ?>
                     </select>
                 </div>
+
+                <!-- Edit Album Name -->
+
                 <div>
                     <label for="album_name">Album Name: </label>
                     <input type="text" id="album_name" name="album_name" value = "<?php echo $album_name; ?>" required/>
                 </div>
+
+                <!-- Override Album Artwork -->
+
                 <div>
                     <label for="artwork">Update Album Artwork (keep under 1MB): </label>
                     <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
                     <input type="file" id="artwork" name="artwork" accept = "image/*"/>
                 </div>
+
+                <!-- Show Current Album Artwork -->
+
                 <div>
                     <img src = "data:artwork;base64,<?php echo $artwork; ?>">
                     <h2>Current Album Artwork<h2>

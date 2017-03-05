@@ -1,3 +1,5 @@
+<!-- Add Artist Page -->
+
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="styles/style.css">
@@ -6,7 +8,13 @@
     <body>
         <div class = "overlay2">
             <h1 class = "form">Add Artist</h1>
+
+            <!-- Add Album Form -->
+
             <form action="added_artist.php" method="post">
+                
+                <!-- Enter Album Name -->
+
                 <div>
                     <label for="artist_name">Artist Name: </label>
                     <input type="text" id="artist_name" name="artist_name" required/>
